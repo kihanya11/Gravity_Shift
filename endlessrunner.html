@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Endless Runner</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div id="game">
+        <div id="chicken"></div>
+        <div id="obstacleCeiling"></div>
+        <div id="obstacleFloor"></div>
+    </div>
+</body>
+<script src="endlessrunner.js"></script>
+<style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+        background: #111;
+    }
+
+    #game {
+        width: 700px;
+        height: 250px;
+        background: navy;
+        position: absolute;
+        top: 50px;
+    }
+
+    #chicken {
+        width: 60px;
+        height: 60px;
+        background: red;
+        position: relative;
+        top: 190px;
+        left: 100px;
+        transition: transform 0.5s ease;
+    }
+
+    #obstacleCeiling {
+        width: 50px;
+        height: 50px;
+        background: green;
+        position: absolute;
+        left: 200%; /* Adjusted initial position for the ceiling obstacle */
+        animation: blockCeiling 1s infinite linear; /* Slower animation speed */
+        top: 50px; /* Adjusted top position for the ceiling obstacle */
+    }
+
+    #obstacleFloor {
+        width: 50px;
+        height: 50px;
+        background: green;
+        position: absolute;
+        left: 100%; /* Adjusted initial position for the floor obstacle */
+        animation: blockFloor 2s infinite linear; /* Slower animation speed */
+        top: 200px; /* Adjusted top position for the floor obstacle */
+    }
+
+    @keyframes blockCeiling {
+        0% {
+            left: 680px;
+        }
+
+        100% {
+            left: -680px;
+        }
+    }
+
+    @keyframes blockFloor {
+        0% {
+            left: 680px;
+        }
+
+        100% {
+            left: -680px;
+        }
+    }
+</style>
+</html>
